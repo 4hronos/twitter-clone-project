@@ -1,15 +1,31 @@
+*{
+    box-sizing: border-box;
+}
 .container{
-    display: flex;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
+    clear: both;
 }
 .left-side{
-background-color: blue;
-flex: 1 1;
+    float: left;
+    background-color: blue;
+    width: 50%;
+    height: 100%;
+    background-image: url(../images/twitter-background.png);
+    background-size: 100% 100%;
 }
 .right-side{
-    flex: 2 1;
-    background-color: green;
-    margin: 30px;
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding: 100px 0 0 30px;
 }
-     
+footer{
+    height: 50px;
+    background-color: red;
+    margin: 20px;
+}
+.littlebird{
+    width: 50px;
+    height: 50px;
+}
