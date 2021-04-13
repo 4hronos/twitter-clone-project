@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+}
+.left-side{
+background-color: blue;
+flex: 1 1;
+}
+.right-side{
+    flex: 2 1;
+    background-color: green;
+    margin: 30px;
+}
+     
