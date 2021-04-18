@@ -323,7 +323,7 @@ footer .footer-nav a{
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #fff;
-    padding: 10px 15px;
+    padding: 15px 0 0 7px;;
     outline: none;
     font-size: 18px;
     
@@ -484,8 +484,8 @@ form div{
 
 }
 
-input:focus ~ .floating-label,
-input:not(:focus):valid ~ .floating-label{
+input:focus ~ .floating-label-0,
+input:not(:focus):valid ~ .floating-label-0{
   top: 9px;
   bottom: 0px;
   left: 7px;
@@ -510,7 +510,7 @@ input:not(:focus):valid ~ .floating-label{
     border: 2px solid #1da1f2;
 
 }
-.floating-label {
+.floating-label-0 {
     position: absolute;
     pointer-events: none;
     left: 9px;
@@ -557,7 +557,6 @@ input:not(:focus):valid ~ .floating-label{
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    display: inline-block;
     color: #1da1f2;
     text-align: center;
     padding-top: 7px;
@@ -651,7 +650,7 @@ input:not(:focus):valid ~ .floating-label{
     @media screen and (min-width: 704px){
         .Sign-up{
             width: 600px;
-            height: 530px;
+            height: 565px;
             border-radius: 15px;
             border: 1px solid #ccc;
             margin: 0 auto;
