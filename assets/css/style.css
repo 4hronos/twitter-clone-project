@@ -242,14 +242,11 @@ footer .footer-nav a{
   
 /*  SIGN UP  */
 .Sign-up{
-    width: 600px;
-    height: 530px;
-    border-radius: 15px;
-    background-color: #000;
-    color: #fff;
-    margin: 0 auto;
-    margin-top: 80px;
     box-sizing: border-box;
+    color: #000;
+    background-color: #fff;
+    margin: 0 auto;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .sign-up-head{
@@ -257,15 +254,23 @@ footer .footer-nav a{
     height: 60px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .sign-up-head img{
-    width: 30px;
+    width: 35px;
+    height: 35px;
     margin-top: 10px;
-    margin-left: 300px;
 }
 
-.Sign-up button{
+.empty-span{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+}
+
+.next{
     width: 75px;
     height: 35px;
     background-color: #1da1f2;
@@ -274,19 +279,31 @@ footer .footer-nav a{
     border-radius: 20px;
     font-weight: bolder;
     font-size: 17px;
-    float: right;
     margin-top: 10px;
     margin-right: 15px;
+    outline: none;
+}
+
+.next-repeat{
     opacity: 0.5;
+}
+.next:hover{
+    background-color: rgb(26, 145, 218);;
+}
+
+.next-button-link{
+    text-decoration: none;
 }
 
 .main-section h2{
     font-weight: bold;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .main-section{
-    margin: 15px 30px;
+    margin: 3px 30px;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
 }
 
 .main-section a{
@@ -305,41 +322,47 @@ footer .footer-nav a{
     margin-top: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
     padding: 10px 15px;
-    font-size: 16px;
+    outline: none;
+    font-size: 18px;
     
 }
 
-.main-section form{
-    margin-bottom: 30px;
-    margin-top: 10px;
+.signup-info-form{
+    margin-bottom: 35px;
+    margin-top: 20px;
 }
 
 input:focus{
-    border-color: #1da1f2;
+    border: 2px solid #1da1f2;
 }
-
 .main-section p{
-    margin: 25px 0px;
+    margin-bottom: 25px;
     line-height: 20px;
-    color: grey;
-    font-size: 17px;
+    color: rgb(107, 106, 106);
+    font-size: 16px;
 }
 
-span{
-    font-weight: bold;
-    color: #fff;
+#date-of-birth{
+    font-weight: bolder;
+    color: #000 !important;
+    font-size: 17px;
+    display: block;
+    margin-top: 35px;
 }
 
 .main-section select{
     height: 60px;
     border: 1px solid #ccc;
-    background-color: #000;
+    background-color: #fff;
     color: grey;
     font-size: 15px;
     border-radius: 5px;
+}
+
+.main-section select:focus{
+    border: 2px solid #1da1f2;
 }
 
 .month{
@@ -354,6 +377,7 @@ span{
 .year{
     width: 140px;
 }
+
 
 /* forgot password page */
 .page-container{
@@ -528,6 +552,115 @@ input:not(:focus):valid ~ .floating-label{
 .login-footer a:hover{
     text-decoration: underline;
 }
+/* left-top x button */
+.x-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    color: #1da1f2;
+    text-align: center;
+    padding-top: 7px;
+    margin: 10px 15px;
+    float: left;
+}
 
+.x-button:hover{
+    background-color: rgb(227, 227, 245);
+}
+
+/* when we hover x button, it shows the text of Close */
+#hiddenText{
+    background-color:#000;
+    opacity: 0.5;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 11px;
+    color: #fff;
+    display: block;
+    margin-top: 10px;
+    width: 37px;
+    height: 20px;
+    display: none;
+}
+
+.x-button:hover #hiddenText {
+    display: block;
+}
+
+/* Form input animation */
+    input:focus ~ .floating-label,
+    input:not(:focus):valid ~ .floating-label{
+    top: 15px;
+    left: 5px;
+    font-size: 13px;
+    opacity: 1;
+    color:#1da1f2;
+    }
+
+    .input-animation{
+    font-size: 14px;
+    width: 200px;
+    height: 35px;
+    padding: 10px 0px 0px 5px !important;
+    }
+
+    .floating-label {
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top: 30px;
+    transition: 0.2s ease all;
+    font-weight: 450;
+    font-size: 18px;
+    color: rgb(107, 106, 106);
+    }
+
+    form div{
+        position: relative;
+    }
+
+    form{
+        position: relative;
+    }
+    /* */
+    
+    @media screen and (max-width: 703px){
+        .Sign-up{
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            border: none;
+            margin: 0 auto;
+            margin-top: 0px;
+        }
+
+        .col-lg-12{
+            width: 100%;
+        }
+
+
+        #name, #phone, #birth-date, #verification-code, #password{
+            width: 100%;
+        }
+
+        .checkbox-paragraph{
+            width: 100%;
+        }
+    }
+    @media screen and (min-width: 704px){
+        .Sign-up{
+            width: 600px;
+            height: 530px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            margin-top: 50px;
+           
+        }
+    }
+    .next:enabled:hover{
+        background-color: rgb(26, 145, 218);
+    }
 
 
