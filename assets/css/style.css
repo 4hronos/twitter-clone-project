@@ -425,6 +425,7 @@ header *{
     line-height: 20px;
     padding: 6px 16px;
     text-align: center;
+    outline: none;
 }
 .forgot-btn:hover{
     background-color: #006dbf;
