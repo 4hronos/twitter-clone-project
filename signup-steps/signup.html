@@ -25,20 +25,22 @@
             <form action="/action_page.php" class = "signup-info-form">   
                 <div class = "row">
                     <div class = "col-lg-12 col-md-6 col-sm-3">
-                        <input onkeyup="stoppedTyping()" type="text" id="name" name="name" class = "input-animation inputName" required maxlength="50">
+                        <input onkeyup="stoppedTyping()" type="text" id="name" name="name" class = "input-animation inputName" required maxlength="50" method="get" action="signup-next2.html">
                         <span class="floating-label">Name</span>
                     </div>
                 </div>
                 
                 <div class = "row">
                     <div class = "col-lg-12 col-md-6 col-sm-3">
-                        <input onkeyup="stoppedTyping()" type="tel" id="phone" name="phone"  class = "input-animation inputTel" required >
-                        <span class="floating-label">Phone</span>
+                        <input onkeyup="stoppedTyping()" type="tel" id="phone" name="phone" class = "input-animation inputTel type-checker" required>
+                        <span class="floating-label phone-span">Phone</span>   
                     </div>
                 </div>
             </form>
         
-            <div><a href = "#">Use e-mail instead</a></div>
+            <div>
+                <a id = "email-link" href = "#">Use e-mail instead</a>
+            </div>
             
             <span id = "date-of-birth">Date of birth</span><br>
             <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
@@ -223,17 +225,53 @@
         var nextBtn = document.querySelector(".next");
 
         function stoppedTyping(){
-            if((inputName.value.length > 0) && (inputPhone.value.length > 0) && (inputYear.value) && (inputMonth.value) && (inputDay.value)){
+            if((inputName.value.trim()) && (inputPhone.value.trim()) && (inputYear.value) && (inputMonth.value) && (inputDay.value)){
                 nextBtn.disabled = false; 
                 nextBtn.style.opacity = 1
-                console.log("If works");
+                console.log("If-1 works");
+
+                var fullName1 = document.querySelector("#name").value;
+                localStorage.setItem("fullName", fullName1);
+
+                var phoneNumber1 = document.querySelector("#phone").value;
+                localStorage.setItem("phoneNumber", phoneNumber1);
+
+                var mailAddress1 = document.querySelector("#phone-span").value;
+                localStorage.setItem("emailAddress", mailAddress1);
+
+                /*var birth = document.querySelector("#name").value;
+                localStorage.setItem("fullName", fullName1);*/
             }else{ 
                 nextBtn.disabled = true;
                 nextBtn.style.opacity = 0.5
+                console.log("Else-1 works");
+            }
+        };       
+
+        
+        
+        document.querySelector("#email-link").onclick = function(){
+            if(document.querySelector("#phone").classList.contains("type-checker")){
+                document.querySelector("#phone").value = "";
+                document.querySelector("#email-link").innerHTML = "Use phone instead"; 
+                document.querySelector("#phone").removeAttribute("type");
+                document.querySelector("#phone").setAttribute("type", "email");
+                document.querySelector("#phone").setAttribute("pattern", "/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;");
+                document.querySelector(".phone-span").innerHTML = "Email";
+                document.querySelector("#phone").classList.remove("type-checker");
+                console.log("If works");
+            }else{
+                document.querySelector("#phone").value = "";
+                document.querySelector("#phone").classList.add("type-checker");
+                document.querySelector("#email-link").innerHTML = "Use e-mail instead"; 
+                document.querySelector("#phone").removeAttribute("type");
+                document.querySelector("#phone").setAttribute("type", "tel");
+                document.querySelector(".phone-span").innerHTML = "Phone";
                 console.log("Else works");
             }
-        };
-    
+        }
+        
+
     </script>
 </body>
 </html>
