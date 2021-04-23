@@ -84,11 +84,8 @@
 
                 <div class = "row">
                     <div class = "col-lg-12 col-md-6 col-sm-3">
-                        <input type="tel" id="phone" name="phone"  class = "input-animation phone-number2" pattern="+994[1-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
-                        <span class="floating-label">Phone</span>
-
-                        <input type="email" id="email" name="email" class = "email-address2" required>
-                        <span class="floating-label">Mail</span>
+                        <input type="tel" id="phone" name="phone"  class = "input-animation phone-number2" required>
+                        <span class="floating-label email-span">Phone</span>
                     </div>
                 </div>
 
@@ -109,12 +106,12 @@
     <script>
         var fullName2 =localStorage.getItem("fullName");
         document.querySelector(".full-name2").value = fullName2;
-
+ 
         var phoneNumber2 =localStorage.getItem("phoneNumber");
         document.querySelector(".phone-number2").value = phoneNumber2;
 
-        var mailAddress2 =localStorage.getItem("emailAddress");
-        document.querySelector(".email-address2").value = mailAddress2;
+        var birthDate =localStorage.getItem("birthData");
+        document.querySelector("#birth-date").value = birthDate;
     </script>
 </body>
 </html>
