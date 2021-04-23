@@ -230,17 +230,31 @@
                 nextBtn.style.opacity = 1
                 console.log("If-1 works");
 
+                var arrayOfBirth = [];
+                elem1 = document.querySelector(".month").value;
+                arrayOfBirth.push(elem1);
+
+                elem2 = document.querySelector(".day").value;
+                arrayOfBirth.push(elem2);
+
+                elem3 = document.querySelector(".year").value;
+                arrayOfBirth.push(elem3);
+                console.log("alinan deyer: ", arrayOfBirth);
+
+                var resArray = arrayOfBirth.join(".");
+                console.log(resArray);
+
                 var fullName1 = document.querySelector("#name").value;
                 localStorage.setItem("fullName", fullName1);
 
                 var phoneNumber1 = document.querySelector("#phone").value;
                 localStorage.setItem("phoneNumber", phoneNumber1);
 
-                var mailAddress1 = document.querySelector("#phone-span").value;
-                localStorage.setItem("emailAddress", mailAddress1);
+                localStorage.setItem("birthData", resArray);
+                
+                /*var mailAddress1 = document.querySelector("#phone-span").innerHTML;
+                localStorage.setItem("emailAddress", mailAddress1);*/
 
-                /*var birth = document.querySelector("#name").value;
-                localStorage.setItem("fullName", fullName1);*/
             }else{ 
                 nextBtn.disabled = true;
                 nextBtn.style.opacity = 0.5
@@ -254,9 +268,11 @@
             if(document.querySelector("#phone").classList.contains("type-checker")){
                 document.querySelector("#phone").value = "";
                 document.querySelector("#email-link").innerHTML = "Use phone instead"; 
+                /*
                 document.querySelector("#phone").removeAttribute("type");
                 document.querySelector("#phone").setAttribute("type", "email");
                 document.querySelector("#phone").setAttribute("pattern", "/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;");
+                */
                 document.querySelector(".phone-span").innerHTML = "Email";
                 document.querySelector("#phone").classList.remove("type-checker");
                 console.log("If works");
@@ -264,8 +280,10 @@
                 document.querySelector("#phone").value = "";
                 document.querySelector("#phone").classList.add("type-checker");
                 document.querySelector("#email-link").innerHTML = "Use e-mail instead"; 
+                /*
                 document.querySelector("#phone").removeAttribute("type");
                 document.querySelector("#phone").setAttribute("type", "tel");
+                */
                 document.querySelector(".phone-span").innerHTML = "Phone";
                 console.log("Else works");
             }
