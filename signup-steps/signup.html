@@ -22,17 +22,17 @@
 
             <h2>Create your account</h2>
            
-            <form action="/action_page.php" class = "signup-info-form">   
+            <form class = "signup-info-form">   
                 <div class = "row">
                     <div class = "col-lg-12 col-md-6 col-sm-3">
-                        <input onkeyup="stoppedTyping()" type="text" id="name" name="name" class = "input-animation inputName" required maxlength="50" method="get" action="signup-next2.html">
+                        <input onkeyup="stoppedTyping()" type="text" id="name" name="name" class = "input-animation inputName" required maxlength="50">
                         <span class="floating-label">Name</span>
                     </div>
                 </div>
                 
                 <div class = "row">
                     <div class = "col-lg-12 col-md-6 col-sm-3">
-                        <input onkeyup="stoppedTyping()" type="tel" id="phone" name="phone" class = "input-animation inputTel type-checker" required>
+                        <input onkeyup="stoppedTyping()" type="tel" id="phone" class = "input-animation inputTel type-checker" required>
                         <span class="floating-label phone-span">Phone</span>   
                     </div>
                 </div>
@@ -251,28 +251,29 @@
                 localStorage.setItem("phoneNumber", phoneNumber1);
 
                 localStorage.setItem("birthData", resArray);
-                
-                /*var mailAddress1 = document.querySelector("#phone-span").innerHTML;
-                localStorage.setItem("emailAddress", mailAddress1);*/
+
+                if(document.querySelector("#email-link").innerHTML == "Use phone instead"){;
+                    localStorage.setItem("phoneEmailSpan", "Email");
+                }else{
+                    localStorage.setItem("phoneEmailSpan", "Phone");
+                }
 
             }else{ 
                 nextBtn.disabled = true;
                 nextBtn.style.opacity = 0.5
                 console.log("Else-1 works");
-            }
-        };       
-
-        
+            };
+        };
+             
         
         document.querySelector("#email-link").onclick = function(){
             if(document.querySelector("#phone").classList.contains("type-checker")){
-                document.querySelector("#phone").value = "";
+                document.querySelector("#phone").value = "examlpe@example.com";
                 document.querySelector("#email-link").innerHTML = "Use phone instead"; 
-                /*
+            
                 document.querySelector("#phone").removeAttribute("type");
                 document.querySelector("#phone").setAttribute("type", "email");
-                document.querySelector("#phone").setAttribute("pattern", "/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;");
-                */
+                
                 document.querySelector(".phone-span").innerHTML = "Email";
                 document.querySelector("#phone").classList.remove("type-checker");
                 console.log("If works");
@@ -280,10 +281,10 @@
                 document.querySelector("#phone").value = "";
                 document.querySelector("#phone").classList.add("type-checker");
                 document.querySelector("#email-link").innerHTML = "Use e-mail instead"; 
-                /*
+        
                 document.querySelector("#phone").removeAttribute("type");
                 document.querySelector("#phone").setAttribute("type", "tel");
-                */
+                
                 document.querySelector(".phone-span").innerHTML = "Phone";
                 console.log("Else works");
             }
