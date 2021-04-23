@@ -54,7 +54,7 @@
         var nextBtn = document.querySelector(".next");
 
         function stoppedTyping(){
-            if(inputVerification.value.length > 0){
+            if(inputVerification.value.trim()){
                 nextBtn.disabled = false; 
                 nextBtn.style.opacity = 1
             }else{ 
