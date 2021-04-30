@@ -39,7 +39,8 @@
             <div class="login-item-container">
                 <h2>Log in to Twitter</h2>
                 <form action="#" method="POST">
-                    <div>
+                    <div class = "error-warning-message"></div>
+                      <div>
                         <input onkeyup="stoppedTyping()" type="text" class="inputText" required autofocus>
                         <span class="floating-label-0">Phone, email, or username</span>
                       </div>
@@ -47,13 +48,14 @@
                         <input onkeyup="stoppedTyping()" type="password" class="inputText inputText2" required>
                         <span class="floating-label-0">Password</span>
                       </div>
-                      <input type="submit" value="Log in" class="login-page-btn" disabled>
+                      <input type="button" value="Log in" class="login-page-btn" disabled>
                 </form>
                 <div class="login-footer">
                     <a href="./forgot-password.html">Forgot password?</a>
                     <span style="font-size: 12px; color: #5b7083;">·</span>
                     <a href="./signup-steps/signup.html">Sign up for Twitter</a>
                 </div>
+
             </div>
         </div>
         </div>
@@ -62,20 +64,54 @@
     var inputdata = document.querySelector(".inputText");
     var inputdata2 = document.querySelector(".inputText2");
     var loginbtn = document.querySelector(".login-page-btn");
+    var elem = document.querySelector(".error-warning-message");
+
+    const usersData = [
+        {
+            name: 'Aytaj',
+            phone: '0514022125',
+            email: 'aytaj@gmail.com',
+            password: '1234567'
+        },
+        {
+            name: 'Emil',
+            phone: '0557579983',
+            email: 'emil.taciyev@gmail.com',
+            password: '7654321'
+        }
+    ] 
 
     function stoppedTyping(){
 
         if((inputdata.value.trim()) && (inputdata2.value.trim())) { 
-            loginbtn.disabled = false; 
-            loginbtn.style.opacity = 1;
-    
+                loginbtn.disabled = false; 
+                loginbtn.style.opacity = 1;
         } else { 
             loginbtn.disabled = true;
             loginbtn.style.opacity = 0.5;
-
         };
 
     };
+
+    document.querySelector(".login-page-btn").onclick = function(){
+        inputdata = document.querySelector(".inputText");
+        inputdata2 = document.querySelector(".inputText2");
+
+        for(let i in usersData){
+            if((inputdata.value == usersData[i].name || inputdata.value == usersData[i].email || inputdata2.value == usersData[i].phone) && inputdata2.value == usersData[i].password){
+                console.log("If works");
+                console.log(inputdata.value, inputdata2.value);
+                break;
+            }else{
+                elem.innerHTML = "The username and password you entered did not match our records. Please double-check and try again.";
+                elem.style.backgroundColor = 'rgb(255, 210, 218)';
+                elem.style.lineHeight = '15px';
+                elem.style.fontSize = '15px';
+                elem.style.padding = '10px';
+                elem.style['border-radius'] = '5px';
+            }
+        }
+    }
 
 
 </script>
