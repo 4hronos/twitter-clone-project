@@ -56,7 +56,7 @@
         var nextBtn = document.querySelector(".next");
         
         function stoppedTyping(){
-        if(inputPassword.value.trim()){ 
+        if(inputPassword.value.trim() && inputPassword.value.length >= 8){ 
             nextBtn.disabled = false; 
             nextBtn.style.opacity = 1
 

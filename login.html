@@ -38,9 +38,9 @@
               <a href="./index.html"><img src="./assets/images/twitter-icon.ico" alt="twitter-logo" class="login-twitter-logo" ></a>
             <div class="login-item-container">
                 <h2>Log in to Twitter</h2>
-                <form action="#" method="POST">
+                <form>
                     <div class = "error-warning-message"></div>
-                      <div>
+                    <div>
                         <input onkeyup="stoppedTyping()" type="text" class="inputText" required autofocus>
                         <span class="floating-label-0">Phone, email, or username</span>
                       </div>
@@ -93,24 +93,49 @@
 
     };
 
-    document.querySelector(".login-page-btn").onclick = function(){
+    var elem = document.querySelector(".error-warning-message");
+    var userfound = false
+
+    const usersData = [
+        {
+            name: 'Aytaj',
+            phone: '0995555555',
+            email: 'aytajmahammadli@gmail.com',
+            password: '1234567'
+        },
+        {
+            name: 'Emil',
+            phone: '0557777777',
+            email: 'emil.taciyev@gmail.com',
+            password: '7654321',
+        }
+    ] 
+
+    loginbtn.onclick = function(){
+        
         inputdata = document.querySelector(".inputText");
         inputdata2 = document.querySelector(".inputText2");
 
-        for(let i in usersData){
-            if((inputdata.value == usersData[i].name || inputdata.value == usersData[i].email || inputdata2.value == usersData[i].phone) && inputdata2.value == usersData[i].password){
-                console.log("If works");
-                console.log(inputdata.value, inputdata2.value);
-                break;
-            }else{
-                elem.innerHTML = "The username and password you entered did not match our records. Please double-check and try again.";
-                elem.style.backgroundColor = 'rgb(255, 210, 218)';
-                elem.style.lineHeight = '15px';
-                elem.style.fontSize = '15px';
-                elem.style.padding = '10px';
-                elem.style['border-radius'] = '5px';
+        for(let i of usersData){
+            if((inputdata.value == i.name || inputdata.value == i.email || inputdata.value == i.phone) && inputdata2.value == i.password){
+                alert("Welcome!");
+                userfound = true;
             }
         }
+            if(!userfound){
+                alert("User not found!")
+                elem.innerHTML = "The username and password you entered did not match our records. Please double-check and try again.";
+                elem.style.backgroundColor = 'rgb(255, 210, 218)';
+                elem.style.width = "334px"
+                elem.style.color = "rgb(15, 20, 25)";
+                elem.style.fontFamily = "-apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif";
+                elem.style.lineHeight = '22px';
+                elem.style.fontSize = '15px';
+                elem.style.padding = '10px';
+                elem.style['border-radius'] = '10px';
+            }
+
+            userfound = false
     }
 
 
