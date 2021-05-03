@@ -455,6 +455,10 @@ header *{
     background-color: #006dbf;
     border: 1px solid #006dbf;
 }
+.forgot-btn:focus{
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #71c9f8;
+}
+
 
 /* login page */
 
