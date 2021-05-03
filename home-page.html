@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="keyword" content="twitter">
+    <title>Home Page / Twitter</title>
+    <meta name="viewpoint" content="width=device-width, inital-scale=1.0">
+    <meta name="description" content="From breaking news and entertainment to sports and politics, get the full story with all the live commentary.">
+    <meta name="author" content="Aytac Mehemmedli, Nihat Abbasov, Emil Taciyev">
+
+    <link rel="shortcut icon" href="assets/images/twitter-icon.ico" type="image/x-icon">    
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet"  type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <style>
+        body{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .home-portions{
+            border: 1px solid grey;
+        }
+
+        .left-buttons{
+            font-size: 18px;
+            font-weight: bolder;
+            background: none;
+            border-radius: 23px;
+            border: none;
+            padding: 10px;
+            color: #000;
+        }
+
+        .left-buttons:hover{
+            background: #e8f5fe;
+            color: #1da1f2;
+        }
+
+        .icon-button:hover{
+            background: #e8f5fe;
+        }
+
+        #twitter-icon{
+            width: 30px;
+        }
+
+        .icon-button{
+            background: none;
+            border-radius: 50%;
+            border: none;
+            padding: 10px;
+        }
+
+        .tweet-button{
+            width: 220px;
+            font-size: 14px;
+            font-weight: 800;
+            color: #fff;
+            background: #1da1f2;
+            padding: 15px;
+        }
+
+        .tweet-button:hover{
+            background: #1a91da;
+            color: #fff;
+        }
+
+        .user-button{
+            width: 260px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #000;
+            padding: 15px;
+            height: 62px;
+
+            background: none;
+            border-radius: 23px;
+            border: none;
+            padding: 10px;
+        }
+
+        .user-button:hover{
+            background: #e8f5fe;
+        }
+
+        .trio-info{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .trio-div{
+            margin: 60px 0px 20px 0px;
+        }
+
+        #dots{
+            margin-top: 10px;
+            font-weight: 800;
+        }
+        
+        #userName{
+            color: grey;
+            font-weight: normal;
+        }
+
+
+        /* Right Hand Side of Home Page */
+        .trending-info-divs{
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 0 0 10px;
+            border-bottom: 1px solid grey;
+
+        }
+
+        .last-trending-info-div{
+            border: none;
+        }
+
+        /* .trending-info-divs:hover{
+            background: #eff1f2;
+        } */
+
+        .trends-section{
+            margin: 30px 0 30px 0px;
+            border-radius: 10px;
+            background-color: #ebeef0;
+        }
+
+        .search-twitter-button{
+            border-radius: 23px;
+            border: none;
+            padding: 10px;
+            color: rgb(75, 75, 75);
+            width: 100%;
+            margin-top: 5px;
+            font-size: 15px;
+        }
+
+        #trends{
+            font-weight: 900;
+            font-size: 20px;
+            color: #000;
+        }
+
+        #show-more{
+            color: #1a91da;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .first-last-divs{
+            height: 30px;
+            margin-top: 5px;
+        }
+
+        /* Right-side - 'Who to follow' */
+        .follow-button{
+            width: 70px;
+            height: 30px;
+            border: 1px solid #1a91da;
+            border-radius: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a91da;
+            margin: 10px 15px 0 0;
+        }
+
+        .circle-imgs{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .follow-options{
+            font-weight: 700;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .follow-options-username{
+            margin-top: -10px;
+            color: #000;
+        }
+
+
+        .links a, span{
+            margin-left: 7px;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 home-portions">
+                <section>
+                    <button class = "icon-button"><img src = "./assets/images/tweet.png" id = "twitter-icon"></button>
+                    <button class="left-buttons">Home</button>
+                    <button class="left-buttons">Explore</button>
+                    <button class="left-buttons">Notifications</button>
+                    <button class="left-buttons">Messages</button>
+                    <button class="left-buttons">Bookmarks</button>
+                    <button class="left-buttons">Lists</button>
+                    <button class="left-buttons">Profile</button>
+                    <button class="left-buttons">More</button>
+                    <button class="tweet-button left-buttons">Tweet</button>
+                    <div class = "trio-div">
+                        <button class="user-button trio-info">
+                            <img  class = "circle-imgs" src = "https://ath2.unileverservices.com/wp-content/uploads/sites/4/2020/02/IG-annvmariv-1024x1016.jpg">
+                            <span>
+                                <p>Aytaj Mahammadli <br>
+                                <span id = "userName">@AMahammadli</span></p>
+                            </span>
+                            <p id = "dots">...</p>
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-5 home-portions">
+            </div>
+
+            <div class="col-lg-4 home-portions">
+                <button class = "search-twitter-button">
+                    <img>
+                    <span>Search Twitter</span>
+                </button>
+
+                <section class = "trends-section">
+                    <div class = "trending-info-divs">
+                        <p id = "trends" class = "first-last-divs">Trends for you</p>
+                        <img>
+                    </div>
+
+                    <div class = "trending-info-divs">
+                        <p>
+                            Politics Trending <br>
+                            Florida <br>
+                            127K Tweets
+                        </p>
+                        <p id = "dots">...</p>
+                    </div>
+
+                    <div class = "trending-info-divs">
+                        <p>
+                            Politics Trending <br>
+                            Florida <br>
+                            127K Tweets
+                        </p>
+                        <p id = "dots">...</p>
+                    </div>
+
+                    <div class = "trending-info-divs last-trending-info-div">
+                        <p id = "show-more" class = "first-last-divs">Show more</p>
+                    </div>
+                </section>
+
+
+                <section class = "trends-section">
+                    <div class = "trending-info-divs">
+                        <p id = "trends" class = "first-last-divs">Who to follow</p>
+                        <img>
+                    </div>
+
+                    <div class = "trending-info-divs">
+                            <img  class = "circle-imgs" src = "http://images6.fanpop.com/image/photos/42600000/Cute-Girl-simpo1-42645775-736-918.jpg">
+                            <div>
+                                <p class = "follow-options">Gunay Mammadova</p>
+                                <p class = "follow-options-username">@gmammadova1</p>
+                            </div>
+                            <button class = "follow-button">Follow</button>
+                    </div>
+
+                    <div class = "trending-info-divs">
+                        <img  class = "circle-imgs" src = "https://ath2.unileverservices.com/wp-content/uploads/sites/4/2020/02/IG-annvmariv-1024x1016.jpg">
+                        <div>
+                            <p class = "follow-options">Gunay Mammadova</p>
+                            <p class = "follow-options-username">@gmammadova1</p>
+                        </div>
+                        <button class = "follow-button">Follow</button>
+                    </div>
+
+                    <div class = "trending-info-divs last-trending-info-div">
+                        <p id = "show-more" class = "first-last-divs">Show more</p>
+                    </div>
+                </section>
+                <div class = "links">
+                    <a>Terms of Service</a>
+                    <a>Privacy Policy</a>
+                    <a>Cookie Policy</a>
+                    <a>Ads Info</a>
+                    <a>More</a><span>...</span>
+                    <span>© 2021 Twitter, Inc.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>
+</html>
